@@ -29,6 +29,10 @@
 	<string>Allow Access to take picture</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow Access to take picture</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow Access to take location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow Access to take location</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
