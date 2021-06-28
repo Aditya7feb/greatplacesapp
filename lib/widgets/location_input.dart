@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
+import '../helpers/location_helper.dart';
 
 class LocationInput extends StatefulWidget {
   const LocationInput({Key key}) : super(key: key);
@@ -14,8 +15,15 @@ class _LocationInputState extends State<LocationInput> {
   Future<void> _getCurrentUserLocation() async {
     print("Hello");
     final locData = await Location().getLocation();
+    final staticMap = LocationHelper.generateLocationPreviewImage(
+      latitude: locData.latitude,
+      longitude: locData.longitude,
+    );
     print(locData.latitude);
     print(locData.longitude);
+    setState(() {
+      _previewImageUrl = staticMap;
+    });
   }
 
   @override
@@ -59,6 +67,12 @@ class _LocationInputState extends State<LocationInput> {
               ),
             ),
             TextButton.icon(
+                style: TextButton.styleFrom(
+                  shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
                 onPressed: () {
                   print("Helw");
                 },
